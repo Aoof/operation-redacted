@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch6mmkjcvdwlx"]
+
+[ext_resource type="PackedScene" uid="uid://cewam3d7ldgqg" path="res://assets/animated-door/source/DoorAnimate.fbx" id="1_swerw"]
+
+[node name="DoorAnimate" instance=ExtResource("1_swerw")]
+transform = Transform3D(1, 0.00052408, 0.000331741, -0.000524269, 1, 0.000536738, -0.000331442, -0.000536923, 1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(0.5, -0.5, -0.5, 0.5)

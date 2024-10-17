@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bq5366hjwsqc"]
+[gd_scene load_steps=2 format=3 uid="uid://bq5366hjwsqc"]
+
+[ext_resource type="PackedScene" uid="uid://ow80bkqakq6i" path="res://rooms/roomtemplate.tscn" id="1_6jtwg"]
 
 [node name="Room12" type="Node3D"]
+
+[node name="room_1" parent="." instance=ExtResource("1_6jtwg")]

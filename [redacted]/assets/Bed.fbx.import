@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1nw5kt2uvesu"
-path="res://.godot/imported/Wall.fbx-3279478ef15df19cc5794ddb20a3aea6.scn"
+uid="uid://c786p522m33r2"
+path="res://.godot/imported/Bed.fbx-1f34ac3a55487a9c160385c40bdee937.scn"
 
 [deps]
 
-source_file="res://assets/Wall.fbx"
-dest_files=["res://.godot/imported/Wall.fbx-3279478ef15df19cc5794ddb20a3aea6.scn"]
+source_file="res://assets/Bed.fbx"
+dest_files=["res://.godot/imported/Bed.fbx-1f34ac3a55487a9c160385c40bdee937.scn"]
 
 [params]
 
@@ -31,14 +31,7 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"Material": {
-"use_external/enabled": true,
-"use_external/path": "res://assets/wallmat.tres"
-}
-}
-}
+_subresources={}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

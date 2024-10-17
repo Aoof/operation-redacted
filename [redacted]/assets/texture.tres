@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://h0xcfso3kf5q"]
+
+[ext_resource type="Texture2D" uid="uid://lwm6d23pnrf3" path="res://assets/animated-door/textures/WoodDoor1.png" id="1_gxc1j"]
+
+[resource]
+resource_name = "Material.001"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_gxc1j")
+emission_enabled = true
