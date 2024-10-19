@@ -1,0 +1,260 @@
+[gd_scene load_steps=8 format=3 uid="uid://ituslwke8q70"]
+
+[ext_resource type="Script" path="res://menus/options.gd" id="1_ch6k1"]
+[ext_resource type="FontFile" uid="uid://du4o4bnu3sg65" path="res://assets/fonts/Kablammo-Regular.ttf" id="1_p6h3c"]
+[ext_resource type="Theme" uid="uid://vjje68o054kl" path="res://menus/button.tres" id="3_y6qgs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcjsb"]
+bg_color = Color(9.32533e-08, 0.0446106, 0.0727817, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71o1i"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1scp0"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.721569)
+shadow_size = 4
+shadow_offset = Vector2(-1, -1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5m6ya"]
+font = ExtResource("1_p6h3c")
+font_size = 30
+font_color = Color(1, 0, 0, 1)
+
+[node name="Options" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ch6k1")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcjsb")
+
+[node name="Gamepad" type="Panel" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.0
+offset_top = -133.0
+offset_right = 376.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_71o1i")
+
+[node name="Button2" type="Panel" parent="PanelContainer/Panel/Gamepad"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_right = -80.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1scp0")
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/Gamepad/Button2"]
+z_index = 1
+layout_mode = 0
+offset_left = 27.0
+offset_top = 139.0
+offset_right = 175.0
+offset_bottom = 179.0
+text = "\"B\" button"
+label_settings = SubResource("LabelSettings_5m6ya")
+
+[node name="Line2D" type="Line2D" parent="PanelContainer/Panel/Gamepad/Button2"]
+z_index = 1
+position = Vector2(-30, 113)
+points = PackedVector2Array(48, -85, 47, 58)
+width = 1.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="Button1" type="Panel" parent="PanelContainer/Panel/Gamepad"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = 32.0
+offset_right = -168.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1scp0")
+
+[node name="Label2" type="Label" parent="PanelContainer/Panel/Gamepad/Button1"]
+z_index = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 155.0
+offset_right = 179.0
+offset_bottom = 195.0
+text = "\"A\" Button"
+label_settings = SubResource("LabelSettings_5m6ya")
+
+[node name="Line2D2" type="Line2D" parent="PanelContainer/Panel/Gamepad/Button1"]
+z_index = 1
+position = Vector2(-23, 105)
+points = PackedVector2Array(48, -85, 47, 82)
+width = 1.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="RightJoystick" type="Panel" parent="PanelContainer/Panel/Gamepad"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 228.0
+offset_top = -88.0
+offset_right = 328.0
+offset_bottom = 12.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1scp0")
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/Gamepad/RightJoystick"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = -125.0
+offset_right = 250.0
+offset_bottom = -85.0
+text = "Look around"
+label_settings = SubResource("LabelSettings_5m6ya")
+
+[node name="Line2D" type="Line2D" parent="PanelContainer/Panel/Gamepad/RightJoystick"]
+position = Vector2(5, 7)
+points = PackedVector2Array(47, -124, 48, 51)
+width = 1.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="LeftJoystick" type="Panel" parent="PanelContainer/Panel/Gamepad"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -88.0
+offset_right = -228.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1scp0")
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/Gamepad/LeftJoystick"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = -125.0
+offset_right = 212.0
+offset_bottom = -85.0
+text = "Movement"
+label_settings = SubResource("LabelSettings_5m6ya")
+
+[node name="Line2D" type="Line2D" parent="PanelContainer/Panel/Gamepad/LeftJoystick"]
+points = PackedVector2Array(48, -117, 48, 51)
+width = 1.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="Button3" type="Panel" parent="PanelContainer/Panel/Gamepad"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_right = 128.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1scp0")
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/Gamepad/Button3"]
+z_index = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 203.0
+offset_right = 130.0
+offset_bottom = 243.0
+text = "Submit / Interact"
+label_settings = SubResource("LabelSettings_5m6ya")
+
+[node name="Line2D" type="Line2D" parent="PanelContainer/Panel/Gamepad/Button3"]
+z_index = 1
+position = Vector2(-23, 105)
+points = PackedVector2Array(48, -85, 47, 130)
+width = 1.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="Button4" type="Panel" parent="PanelContainer/Panel/Gamepad"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 168.0
+offset_top = 32.0
+offset_right = 216.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1scp0")
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/Gamepad/Button4"]
+z_index = 1
+layout_mode = 0
+offset_left = 34.0
+offset_top = 131.0
+offset_right = 132.0
+offset_bottom = 171.0
+text = "Cancel"
+label_settings = SubResource("LabelSettings_5m6ya")
+
+[node name="Line2D" type="Line2D" parent="PanelContainer/Panel/Gamepad/Button4"]
+z_index = 1
+position = Vector2(-23, 105)
+points = PackedVector2Array(48, -85, 47, 58)
+width = 1.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 261.0
+offset_right = 61.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_y6qgs")
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="PanelContainer/Panel/Button" to="." method="_on_button_pressed"]
