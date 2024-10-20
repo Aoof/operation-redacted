@@ -13,6 +13,7 @@ var camera_distance: float = 7.0  # Closer distance to the character
 var camera_height_offset: float = 6.0  # Raise the camera to center character
 var smooth_time: float = 0.1  # Camera follow smoothing
 var rotation_speed: float = 2.0  # Speed of character rotation
+var rotation_step: float = 1.0  # How much to rotate per frame when turning (adjust for sensitivity)
 
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
@@ -30,15 +31,17 @@ func _process(delta: float) -> void:
 func handle_movement(_delta: float) -> void:
 	var direction = Vector3.ZERO
 
-	# Detect input for movement relative to the character's local orientation
+	# Rotate the character smoothly when pressing A (left) or D (right)
+	if Input.is_action_pressed("left"):
+		rotation.y += rotation_step * _delta  # Rotate left
+	elif Input.is_action_pressed("right"):
+		rotation.y -= rotation_step * _delta  # Rotate right
+
+	# Detect input for forward/backward movement relative to the character's local orientation
 	if Input.is_action_pressed("up"):
 		direction -= transform.basis.z  # Move forward in character's local space
 	if Input.is_action_pressed("down"):
 		direction += transform.basis.z  # Move backward in character's local space
-	if Input.is_action_pressed("left"):
-		direction -= transform.basis.x  # Move left relative to the character's orientation
-	if Input.is_action_pressed("right"):
-		direction += transform.basis.x  # Move right relative to the character's orientation
 
 	direction = direction.normalized()
 
@@ -51,11 +54,7 @@ func handle_movement(_delta: float) -> void:
 	velocity = direction * current_speed
 	move_and_slide()
 
-	# Smoothly rotate the character to face the direction of movement
-	if direction != Vector3.ZERO:
-		# Calculate the desired direction based on movement and smoothly rotate the character to face it
-		var target_rotation = direction.angle_to(Vector3(0, 0, -1))  # We want the character to face the direction of movement
-		rotation.y = lerp_angle(rotation.y, -target_rotation, rotation_speed * _delta)  # Smooth character rotation
+	# No longer using the rotation in `direction` because we're handling the rotation with A and D keys.
 
 	update_animation(direction, is_running)
 
