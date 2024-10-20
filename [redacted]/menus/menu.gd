@@ -27,3 +27,8 @@ func _on_option_button_pressed() -> void:
 func _on_quit_button_pressed() -> void:
 	if (Globals.active_menu != Globals.MAIN_MENU): return
 	get_tree().quit()
+
+
+func _on_credits_button_pressed() -> void:
+	if (Globals.active_menu != Globals.MAIN_MENU): return
+	get_tree().change_scene_to_file(Globals.get_menu(Globals.CREDITS))

@@ -12,7 +12,7 @@ var camera_angle: float = -20.0  # Slight downward tilt
 var camera_distance: float = 7.0  # Closer distance to the character
 var camera_height_offset: float = 6.0  # Raise the camera to center character
 var smooth_time: float = 0.1  # Camera follow smoothing
-var rotation_speed: float = 2.0  # Speed of character rotation
+var rotation_speed: float = 7.0  # Speed of character rotation
 var rotation_step: float = 1.0  # How much to rotate per frame when turning (adjust for sensitivity)
 
 var _velocity := Vector3.ZERO
@@ -48,7 +48,11 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.length() > 0.2:
 		var look_direction = Vector2(velocity.z, velocity.x)
-		character_model.rotation.y = look_direction.angle()
+		var target_rotation_y = look_direction.angle()
+		
+		# Smoothly interpolate the character's rotation towards the target rotation
+		character_model.rotation.y = lerp_angle(character_model.rotation.y, target_rotation_y, rotation_speed * delta)
+
 	
 	update_animation(move_direction, is_running)
 
