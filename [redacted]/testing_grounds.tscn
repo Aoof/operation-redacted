@@ -10,6 +10,7 @@ reflected_light_source = 1
 tonemap_exposure = 0.1
 
 [node name="Game" type="Node3D"]
+process_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jlls1")

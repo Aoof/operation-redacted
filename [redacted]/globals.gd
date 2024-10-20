@@ -1,0 +1,29 @@
+extends Node
+
+enum { MAIN_MENU, OPTIONS, PAUSE, MAIN_GAME }
+
+var pause_menu
+var options_menu
+
+var active_menu
+
+var objective
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	active_menu = MAIN_MENU
+	objective = "Objective: Retrieve the patient's files"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func get_menu(menu: int) -> String:
+	var menus = [
+		"res://menus/menu.tscn",
+		"res://menus/options.tscn",
+		"res://menus/pause.tscn",
+		"res://testing_grounds.tscn",
+	]
+	return menus[menu]

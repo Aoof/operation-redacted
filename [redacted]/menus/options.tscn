@@ -29,7 +29,8 @@ font_size = 30
 font_color = Color(1, 0, 0, 1)
 
 [node name="Options" type="Control"]
-z_index = 1
+process_mode = 3
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
