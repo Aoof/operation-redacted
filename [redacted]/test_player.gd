@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	var move_direction := Vector3.ZERO
 	
 	move_direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	move_direction.z = Input.get_action_strength("backward") - Input.get_action_strength("forward")
+	move_direction.z = Input.get_action_strength("down") - Input.get_action_strength("up")
 	move_direction = move_direction.rotated(Vector3.UP, spring_arm.rotation.y).normalized()
 	
 	var current_speed = movement_speed
