@@ -74,9 +74,9 @@ func handle_movement(_delta: float) -> void:
 		rotation.y -= rotation_step * _delta  # Rotate right
 
 	# Detect input for forward/backward movement relative to the character's local orientation
-	if Input.is_action_pressed("forward"):
+	if Input.is_action_pressed("up"):
 		direction -= transform.basis.z  # Move forward in character's local space
-	if Input.is_action_pressed("backward"):
+	if Input.is_action_pressed("down"):
 		direction += transform.basis.z  # Move backward in character's local space
 
 	direction = direction.normalized()
