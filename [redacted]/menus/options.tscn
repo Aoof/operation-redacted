@@ -85,7 +85,7 @@ offset_left = 27.0
 offset_top = 139.0
 offset_right = 175.0
 offset_bottom = 179.0
-text = "\"B\" button"
+text = "Menu up"
 label_settings = SubResource("LabelSettings_5m6ya")
 
 [node name="Line2D" type="Line2D" parent="PanelContainer/Panel/Gamepad/Button2"]
@@ -115,7 +115,7 @@ offset_left = 32.0
 offset_top = 155.0
 offset_right = 179.0
 offset_bottom = 195.0
-text = "\"A\" Button"
+text = "Menu down"
 label_settings = SubResource("LabelSettings_5m6ya")
 
 [node name="Line2D2" type="Line2D" parent="PanelContainer/Panel/Gamepad/Button1"]
@@ -197,11 +197,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1scp0")
 [node name="Label" type="Label" parent="PanelContainer/Panel/Gamepad/Button3"]
 z_index = 1
 layout_mode = 0
-offset_left = 32.0
-offset_top = 203.0
-offset_right = 130.0
-offset_bottom = 243.0
-text = "Submit / Interact"
+offset_left = 128.0
+offset_top = 150.0
+offset_right = 385.0
+offset_bottom = 190.0
+text = "Submit / Run"
 label_settings = SubResource("LabelSettings_5m6ya")
 
 [node name="Line2D" type="Line2D" parent="PanelContainer/Panel/Gamepad/Button3"]
@@ -227,11 +227,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1scp0")
 [node name="Label" type="Label" parent="PanelContainer/Panel/Gamepad/Button4"]
 z_index = 1
 layout_mode = 0
-offset_left = 34.0
-offset_top = 131.0
-offset_right = 132.0
-offset_bottom = 171.0
-text = "Cancel / Run"
+offset_left = -56.0
+offset_top = 166.0
+offset_right = 125.0
+offset_bottom = 206.0
+text = "Cancel"
 label_settings = SubResource("LabelSettings_5m6ya")
 
 [node name="Line2D" type="Line2D" parent="PanelContainer/Panel/Gamepad/Button4"]
