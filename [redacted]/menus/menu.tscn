@@ -55,6 +55,24 @@ text = "Quit"
 flat = true
 alignment = 0
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -309.5
+offset_top = 248.0
+offset_right = 310.5
+offset_bottom = 327.0
+grow_horizontal = 2
+theme = ExtResource("2_qwkbd")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "Operation [tornado radius=10.0 freq=1.0 connected=1][shake rate=40.0 level=6 connected=1][color=red][REDACTED][/color][/shake][/tornado]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

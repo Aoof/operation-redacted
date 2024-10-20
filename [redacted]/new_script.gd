@@ -26,9 +26,6 @@ var room_graph = {
 	"room22": {"down": "room19", "right": "room23", "left": "room21"},
 	"room23": {"down": "room18", "right": "room24", "left": "room22"},
 	"room24": {"down": "room17", "left": "room23"},
-
-
-
 	
 }
 

@@ -10,6 +10,8 @@ var active_menu
 var objective
 var mouse_captured = false
 
+var is_story_told = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	active_menu = MAIN_MENU
@@ -25,6 +27,6 @@ func get_menu(menu: int) -> String:
 		"res://menus/menu.tscn",
 		"res://menus/options.tscn",
 		"res://menus/pause.tscn",
-		"res://testing_grounds.tscn",
+		"res://test_main.tscn",
 	]
 	return menus[menu]

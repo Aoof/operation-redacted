@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_start_button_pressed() -> void:
 	if (Globals.active_menu != Globals.MAIN_MENU): return
+	Globals.is_story_told = false
 	get_tree().change_scene_to_file(Globals.get_menu(Globals.MAIN_GAME))
 
 

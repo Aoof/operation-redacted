@@ -231,7 +231,7 @@ offset_left = 34.0
 offset_top = 131.0
 offset_right = 132.0
 offset_bottom = 171.0
-text = "Cancel"
+text = "Cancel / Run"
 label_settings = SubResource("LabelSettings_5m6ya")
 
 [node name="Line2D" type="Line2D" parent="PanelContainer/Panel/Gamepad/Button4"]

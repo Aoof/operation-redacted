@@ -58,8 +58,6 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	spring_arm.position = position
 	
-	
-	
 	#handle_movement(delta)
 	#update_camera_position()
 
