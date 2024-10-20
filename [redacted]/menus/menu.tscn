@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4qf0wkmg61jx"]
+[gd_scene load_steps=5 format=3 uid="uid://b4qf0wkmg61jx"]
 
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_miyhn"]
 [ext_resource type="Theme" uid="uid://vjje68o054kl" path="res://menus/button.tres" id="2_qwkbd"]
 [ext_resource type="VideoStream" path="res://assets/menu.ogv" id="3_0qdxx"]
+[ext_resource type="AudioStream" uid="uid://csinvp7aekelo" path="res://assets/audio/title.wav" id="4_2nbuy"]
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -99,6 +100,10 @@ text = "Operation [tornado radius=10.0 freq=1.0 connected=1][shake rate=40.0 lev
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2nbuy")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]

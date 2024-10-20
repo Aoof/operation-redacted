@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var camera = $SpringArm3D/Camera3D
 @onready var character_model = $CharacterModel  # Reference to the CharacterModel node
 @onready var animation_player = $CharacterModel/AnimationPlayer  # Reference the AnimationPlayer inside CharacterModel
+@onready var audio_stream_player = $AudioStreamPlayer
 
 # Optimized variables
 @export var movement_speed: float = 7.0
@@ -17,6 +18,9 @@ var rotation_step: float = 1.0  # How much to rotate per frame when turning (adj
 
 var _velocity := Vector3.ZERO
 var _snap_vector := Vector3.DOWN
+
+var walking_footsteps = preload("res://assets/audio/footsteps.wav")
+var running_footsteps = preload("res://assets/audio/runsteps.wav")
 
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
@@ -88,6 +92,22 @@ func handle_movement(_delta: float) -> void:
 
 	# Apply movement relative to the character's local space
 	velocity = direction * current_speed
+	
+	# Play/stop walking/running sounds
+	if velocity == Vector3.ZERO:
+		if audio_stream_player.playing:
+			audio_stream_player.stop()
+	else:
+		if is_running:
+			if audio_stream_player.stream != running_footsteps:
+				audio_stream_player.stream = running_footsteps
+				
+		elif audio_stream_player.stream != walking_footsteps:
+			audio_stream_player.stream = walking_footsteps
+		
+		if !audio_stream_player.playing:
+			audio_stream_player.play()
+			
 	move_and_slide()
 
 	# No longer using the rotation in `direction` because we're handling the rotation with A and D keys.
