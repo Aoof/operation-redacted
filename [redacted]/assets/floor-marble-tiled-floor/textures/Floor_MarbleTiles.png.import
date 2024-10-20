@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvygn3bkuwuai"
 path.s3tc="res://.godot/imported/Floor_MarbleTiles.png-21f0ff5f298be773af19e034ebd4b74c.s3tc.ctex"
+path.etc2="res://.godot/imported/Floor_MarbleTiles.png-21f0ff5f298be773af19e034ebd4b74c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/floor-marble-tiled-floor/textures/Floor_MarbleTiles.png"
-dest_files=["res://.godot/imported/Floor_MarbleTiles.png-21f0ff5f298be773af19e034ebd4b74c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Floor_MarbleTiles.png-21f0ff5f298be773af19e034ebd4b74c.s3tc.ctex", "res://.godot/imported/Floor_MarbleTiles.png-21f0ff5f298be773af19e034ebd4b74c.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://lwm6d23pnrf3"
 path.s3tc="res://.godot/imported/WoodDoor1.png-35f79d00fc1cafe301570be1a053f788.s3tc.ctex"
+path.etc2="res://.godot/imported/WoodDoor1.png-35f79d00fc1cafe301570be1a053f788.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/animated-door/textures/WoodDoor1.png"
-dest_files=["res://.godot/imported/WoodDoor1.png-35f79d00fc1cafe301570be1a053f788.s3tc.ctex"]
+dest_files=["res://.godot/imported/WoodDoor1.png-35f79d00fc1cafe301570be1a053f788.s3tc.ctex", "res://.godot/imported/WoodDoor1.png-35f79d00fc1cafe301570be1a053f788.etc2.ctex"]
 
 [params]
 

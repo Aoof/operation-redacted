@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtgu2iputh44u"
 path.s3tc="res://.godot/imported/BoyMaximo_Ch46_1001_Glossiness.png-5893c048379d022ca525d6927bfac92a.s3tc.ctex"
+path.etc2="res://.godot/imported/BoyMaximo_Ch46_1001_Glossiness.png-5893c048379d022ca525d6927bfac92a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/majd-the-boy/source/BoyMaximo_Ch46_1001_Glossiness.png"
-dest_files=["res://.godot/imported/BoyMaximo_Ch46_1001_Glossiness.png-5893c048379d022ca525d6927bfac92a.s3tc.ctex"]
+dest_files=["res://.godot/imported/BoyMaximo_Ch46_1001_Glossiness.png-5893c048379d022ca525d6927bfac92a.s3tc.ctex", "res://.godot/imported/BoyMaximo_Ch46_1001_Glossiness.png-5893c048379d022ca525d6927bfac92a.etc2.ctex"]
 
 [params]
 
