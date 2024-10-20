@@ -22,3 +22,5 @@ script = ExtResource("1_unp48")
 
 [node name="Player" parent="." instance=ExtResource("2_6300q")]
 script = ExtResource("3_rl5ea")
+movement_speed = 7.0
+run_speed = 12.0
