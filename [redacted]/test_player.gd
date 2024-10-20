@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = move_direction.x
 	velocity.z = move_direction.z
-	#velocity.y -= 20 * delta # no collision with floor
+	#velocity.y -= 10 * delta # no collision with floor
 	
 	velocity = velocity * current_speed
 	move_and_slide()

@@ -24,6 +24,7 @@ process_mode = 1
 script = ExtResource("1_unp48")
 
 [node name="CurrentRoom" type="Node" parent="GameController"]
+unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("2_6300q")]
 process_mode = 1

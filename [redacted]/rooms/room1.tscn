@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cqy22rf2ocrdc"]
+[gd_scene load_steps=20 format=4 uid="uid://cqy22rf2ocrdc"]
 
 [ext_resource type="PackedScene" uid="uid://1nw5kt2uvesu" path="res://assets/Wall.fbx" id="1_i3u43"]
 [ext_resource type="PackedScene" uid="uid://c2el65ecx73og" path="res://assets/floor-marble-tiled-floor/source/FloorTiledMarble.fbx" id="2_cfj5x"]
@@ -187,6 +187,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kcacu")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yi4rg"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkv1p"]
 resource_name = "Material.001"
 vertex_color_use_as_albedo = true
@@ -250,7 +252,7 @@ _data = {
 "Armature|Open": SubResource("Animation_ramsw")
 }
 
-[node name="room_1" type="Node3D"]
+[node name="room_2" type="Node3D"]
 
 [node name="Wall" parent="." instance=ExtResource("1_i3u43")]
 transform = Transform3D(0.000508733, 0, -1.00017, 0, 1, 0, 1.32507, 0, 0.000383994, -4.12922, 0.448558, -3.00789)
@@ -368,6 +370,12 @@ omni_range = 8.52
 
 [node name="FloorTiledMarble" parent="." instance=ExtResource("2_cfj5x")]
 transform = Transform3D(3.05148, 0, 0, 0, 0.00583206, 0, 0, 0, 3.06127, -4.31368, 0, 10.3609)
+
+[node name="Area3D" type="Area3D" parent="FloorTiledMarble"]
+transform = Transform3D(13.3, 0, 0, 0, 13.3, 0, 0, 0, 13.3, 5.4872, -0.000327045, -5.42248)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTiledMarble/Area3D"]
+shape = SubResource("BoxShape3D_yi4rg")
 
 [node name="DoorAnimate" parent="." instance=ExtResource("3_kloc6")]
 transform = Transform3D(1, 0, 0, 0, 1.05407, 0, 0, 0, 1.27711, -3.89817, 0, -9.16707)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=4 uid="uid://ow80bkqakq6i"]
+[gd_scene load_steps=22 format=4 uid="uid://ow80bkqakq6i"]
 
 [ext_resource type="PackedScene" uid="uid://1nw5kt2uvesu" path="res://assets/Wall.fbx" id="1_3u1fn"]
+[ext_resource type="Script" path="res://rooms/room_handler.gd" id="1_fp37u"]
 [ext_resource type="PackedScene" uid="uid://c2el65ecx73og" path="res://assets/floor-marble-tiled-floor/source/FloorTiledMarble.fbx" id="2_5s5ew"]
 [ext_resource type="PackedScene" uid="uid://cewam3d7ldgqg" path="res://assets/animated-door/source/DoorAnimate.fbx" id="3_j6b35"]
 [ext_resource type="Texture2D" uid="uid://lwm6d23pnrf3" path="res://assets/animated-door/textures/WoodDoor1.png" id="4_3hs3y"]
@@ -187,6 +188,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kcacu")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7af2"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkv1p"]
 resource_name = "Material.001"
 vertex_color_use_as_albedo = true
@@ -224,6 +227,9 @@ bind/1/name = &"Bone.001"
 bind/1/bone = -1
 bind/1/pose = Transform3D(0.0201545, 6.19407e-10, 0, 0, 0, 0.01, -1.52162e-09, 0.00820429, 0, 0.00138032, 0, 0.0123586)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7lhvs"]
+size = Vector3(2.52771, 4.64575, 3.63818)
+
 [sub_resource type="Animation" id="Animation_fpw1q"]
 resource_name = "Armature|Close"
 tracks/0/type = "rotation_3d"
@@ -251,6 +257,7 @@ _data = {
 }
 
 [node name="room_1" type="Node3D"]
+script = ExtResource("1_fp37u")
 
 [node name="Wall" parent="." instance=ExtResource("1_3u1fn")]
 transform = Transform3D(0.000508733, 0, -1.00017, 0, 1, 0, 1.32507, 0, 0.000383994, -4.12922, 0.448558, -3.00789)
@@ -369,6 +376,12 @@ omni_range = 8.52
 [node name="FloorTiledMarble" parent="." instance=ExtResource("2_5s5ew")]
 transform = Transform3D(3.05148, 0, 0, 0, 0.00583206, 0, 0, 0, 3.06127, -4.31368, 0, 10.3609)
 
+[node name="Area3D" type="Area3D" parent="FloorTiledMarble"]
+transform = Transform3D(13.3, 0, 0, 0, 13.3, 0, 0, 0, 13.3, 5.4872, -0.000327045, -5.42248)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTiledMarble/Area3D"]
+shape = SubResource("BoxShape3D_y7af2")
+
 [node name="DoorAnimate" parent="." instance=ExtResource("3_j6b35")]
 transform = Transform3D(1, 0, 0, 0, 1.05407, 0, 0, 0, 1.27711, -3.89817, 0, -9.16707)
 
@@ -396,8 +409,16 @@ bones/2/rotation = Quaternion(0, 0, 0, 1)
 bones/2/scale = Vector3(1, 1, 1)
 
 [node name="PhyDoor_004" type="MeshInstance3D" parent="DoorAnimate/Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.56212, -1.76687)
 mesh = SubResource("ArrayMesh_sbmqb")
 skin = SubResource("Skin_hec2r")
+
+[node name="Door1Collider" type="Area3D" parent="DoorAnimate/Skeleton3D/PhyDoor_004"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0376072, 7.15256e-07, -0.0342979)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorAnimate/Skeleton3D/PhyDoor_004/Door1Collider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.755554, -0.539186, 1.95882)
+shape = SubResource("BoxShape3D_7lhvs")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="DoorAnimate"]
 libraries = {
@@ -434,6 +455,12 @@ bones/2/scale = Vector3(1, 1, 1)
 mesh = SubResource("ArrayMesh_sbmqb")
 skin = SubResource("Skin_hec2r")
 
+[node name="Door2Collider" type="Area3D" parent="DoorAnimate3/Skeleton3D/PhyDoor_004"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorAnimate3/Skeleton3D/PhyDoor_004/Door2Collider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.755554, -0.539186, 1.95882)
+shape = SubResource("BoxShape3D_7lhvs")
+
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="DoorAnimate3"]
 libraries = {
 "": SubResource("AnimationLibrary_7sg7i")
@@ -468,6 +495,12 @@ bones/2/scale = Vector3(1, 1, 1)
 [node name="PhyDoor_004" type="MeshInstance3D" parent="DoorAnimate2/Skeleton3D"]
 mesh = SubResource("ArrayMesh_sbmqb")
 skin = SubResource("Skin_hec2r")
+
+[node name="Door3Collider" type="Area3D" parent="DoorAnimate2/Skeleton3D/PhyDoor_004"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorAnimate2/Skeleton3D/PhyDoor_004/Door3Collider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.755554, -0.539186, 1.95882)
+shape = SubResource("BoxShape3D_7lhvs")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="DoorAnimate2"]
 libraries = {
@@ -504,6 +537,12 @@ bones/2/scale = Vector3(1, 1, 1)
 mesh = SubResource("ArrayMesh_sbmqb")
 skin = SubResource("Skin_hec2r")
 
+[node name="Door4Collider" type="Area3D" parent="DoorAnimate4/Skeleton3D/PhyDoor_004"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorAnimate4/Skeleton3D/PhyDoor_004/Door4Collider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.755554, -0.539186, 1.95882)
+shape = SubResource("BoxShape3D_7lhvs")
+
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="DoorAnimate4"]
 libraries = {
 "": SubResource("AnimationLibrary_7sg7i")
@@ -536,3 +575,12 @@ transform = Transform3D(-0.999451, 0, 0.0331203, 0, 1, 0, -0.0331203, 0, -0.9994
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3d4"]
 transform = Transform3D(0.942606, 0, 0, 0, 0.942607, 0, 5.82077e-11, 0, 0.942606, 0, 0, 0)
 shape = SubResource("BoxShape3D_tviqo")
+
+[connection signal="body_entered" from="DoorAnimate/Skeleton3D/PhyDoor_004/Door1Collider" to="." method="_on_door_1_collider_body_entered"]
+[connection signal="body_exited" from="DoorAnimate/Skeleton3D/PhyDoor_004/Door1Collider" to="." method="_on_door_1_collider_body_exited"]
+[connection signal="body_entered" from="DoorAnimate3/Skeleton3D/PhyDoor_004/Door2Collider" to="." method="_on_door_2_collider_body_entered"]
+[connection signal="body_exited" from="DoorAnimate3/Skeleton3D/PhyDoor_004/Door2Collider" to="." method="_on_door_2_collider_body_exited"]
+[connection signal="body_entered" from="DoorAnimate2/Skeleton3D/PhyDoor_004/Door3Collider" to="." method="_on_door_3_collider_body_entered"]
+[connection signal="body_exited" from="DoorAnimate2/Skeleton3D/PhyDoor_004/Door3Collider" to="." method="_on_door_3_collider_body_exited"]
+[connection signal="body_entered" from="DoorAnimate4/Skeleton3D/PhyDoor_004/Door4Collider" to="." method="_on_door_4_collider_body_entered"]
+[connection signal="body_exited" from="DoorAnimate4/Skeleton3D/PhyDoor_004/Door4Collider" to="." method="_on_door_4_collider_body_exited"]
