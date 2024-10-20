@@ -8,6 +8,7 @@ var options_menu
 var active_menu
 
 var objective
+var mouse_captured = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

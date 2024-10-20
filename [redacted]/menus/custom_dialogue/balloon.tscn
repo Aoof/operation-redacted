@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=14 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://menus/custom_dialogue/balloon.gd" id="1_36de5"]
+[ext_resource type="Texture2D" uid="uid://c2yi3rp6mskub" path="res://assets/dialogues/dilaoguebox.png" id="2_10tdc"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://bayroygyat85a" path="res://assets/characters/no_067.png" id="2_n6ejn"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
@@ -65,6 +66,13 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ku8ng"]
+texture = ExtResource("2_10tdc")
+modulate_color = Color(0.253856, 0.428392, 1, 1)
+
+[sub_resource type="Theme" id="Theme_aghxo"]
+Panel/styles/panel = SubResource("StyleBoxTexture_ku8ng")
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
@@ -86,19 +94,24 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
+offset_left = 64.0
 offset_top = -300.0
-offset_right = -19.0
-offset_bottom = -19.0
+offset_right = -64.0
+offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
+theme = SubResource("Theme_aghxo")
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = -17.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -108,7 +121,7 @@ theme_override_constants/separation = 30
 
 [node name="Portrait" type="TextureRect" parent="Balloon/Panel/Dialogue/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 230)
+custom_minimum_size = Vector2(150, 179.26)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -125,6 +138,7 @@ modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_83qve")
+theme_override_colors/default_color = Color(1, 0.564706, 0.721569, 1)
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Character"
@@ -136,6 +150,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_83qve")
+theme_override_colors/default_color = Color(1, 0.564706, 0.721569, 1)
 theme_override_font_sizes/normal_font_size = 30
 text = "Dialogue..."
 
