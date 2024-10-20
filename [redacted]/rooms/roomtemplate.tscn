@@ -280,7 +280,7 @@ skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="mainlamp"]
 light_color = Color(0.781407, 0.781407, 0.781407, 1)
-light_energy = 16.0
+light_energy = 14.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
 light_size = 1.0
@@ -294,7 +294,7 @@ skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="mainlamp3"]
 light_color = Color(0.853917, 0.853917, 0.853917, 1)
-light_energy = 16.0
+light_energy = 14.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
 light_size = 1.0
@@ -308,7 +308,7 @@ skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="mainlamp2"]
 light_color = Color(0.879776, 0.879776, 0.879776, 1)
-light_energy = 16.0
+light_energy = 14.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
 light_size = 1.0
@@ -322,7 +322,7 @@ skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="mainlamp4"]
 light_color = Color(0.836755, 0.836755, 0.836755, 1)
-light_energy = 16.0
+light_energy = 14.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 14.17
 light_size = 1.0
@@ -335,7 +335,7 @@ mesh = SubResource("ArrayMesh_usu8p")
 skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="side lamp"]
-light_energy = 9.404
+light_energy = 13.0
 light_specular = 5.0
 omni_range = 8.52
 

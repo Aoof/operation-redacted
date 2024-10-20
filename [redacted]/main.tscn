@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cd8fvmg0h2ght"]
 
 [ext_resource type="Script" path="res://new_script.gd" id="1_v15h1"]
-[ext_resource type="Script" path="res://character_body_3d.gd" id="2_tw5to"]
+[ext_resource type="PackedScene" uid="uid://cr86xkuax118s" path="res://player.tscn" id="2_qjhht"]
 
 [sub_resource type="Environment" id="Environment_jlls1"]
 background_energy_multiplier = 0.0
 ambient_light_energy = 0.0
 reflected_light_source = 1
-tonemap_exposure = 0.1
+tonemap_exposure = 0.06
 
 [node name="Game" type="Node3D"]
 
@@ -19,8 +19,4 @@ script = ExtResource("1_v15h1")
 
 [node name="CurrentRoom" type="Node" parent="GameController"]
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-script = ExtResource("2_tw5to")
-
-[node name="FirstPersonCamera" type="Camera3D" parent="Player"]
+[node name="Player" parent="." instance=ExtResource("2_qjhht")]
