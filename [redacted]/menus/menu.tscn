@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4qf0wkmg61jx"]
+
+[ext_resource type="Script" path="res://menus/menu.gd" id="1_miyhn"]
+[ext_resource type="Theme" uid="uid://vjje68o054kl" path="res://menus/button.tres" id="2_qwkbd"]
+[ext_resource type="VideoStream" path="res://assets/menu.ogv" id="3_0qdxx"]
+
+[node name="Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchor_right = 1.389
+anchor_bottom = 1.389
+offset_right = -622.4
+offset_bottom = -350.1
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("1_miyhn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = -378.0
+offset_right = 713.0
+offset_bottom = -136.0
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_qwkbd")
+theme_type_variation = &"FlatButton"
+text = "Start"
+flat = true
+alignment = 0
+
+[node name="OptionButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_qwkbd")
+text = "Options"
+flat = true
+alignment = 0
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_qwkbd")
+theme_type_variation = &"FlatButton"
+text = "Credits"
+flat = true
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_qwkbd")
+text = "Quit"
+flat = true
+alignment = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("3_0qdxx")
+volume_db = -80.0
+autoplay = true
+loop = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -672.0
+offset_top = 248.0
+offset_right = -52.0001
+offset_bottom = 327.0
+grow_horizontal = 2
+mouse_filter = 1
+theme = ExtResource("2_qwkbd")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "Operation [tornado radius=10.0 freq=1.0 connected=1][shake rate=40.0 level=6 connected=1][color=red][REDACTED][/color][/shake][/tornado]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

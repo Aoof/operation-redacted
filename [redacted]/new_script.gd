@@ -26,9 +26,6 @@ var room_graph = {
 	"room22": {"down": "room19", "right": "room23", "left": "room21"},
 	"room23": {"down": "room18", "right": "room24", "left": "room22"},
 	"room24": {"down": "room17", "left": "room23"},
-
-
-
 	
 }
 
@@ -66,14 +63,20 @@ func switch_room(new_room_name: String) -> void:
 
 # Handle input for switching rooms
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_up"):  # "w" key for up
-		attempt_room_switch("up")
-	elif event.is_action_pressed("ui_down"):  # "s" key for down
-		attempt_room_switch("down")
-	elif event.is_action_pressed("ui_left"):  # "a" key for left
-		attempt_room_switch("left")
-	elif event.is_action_pressed("ui_right"):  # "d" key for right
-		attempt_room_switch("right")
+	if event.is_action_pressed("pause"):
+		get_tree().paused = true
+		var pauseMenu = load(Globals.get_menu(Globals.PAUSE))
+		Globals.pause_menu = pauseMenu.instantiate()
+		add_child(Globals.pause_menu)
+		
+	#if event.is_action_pressed("ui_up"):  # "w" key for up
+		#attempt_room_switch("up")
+	#elif event.is_action_pressed("ui_down"):  # "s" key for down
+		#attempt_room_switch("down")
+	#elif event.is_action_pressed("ui_left"):  # "a" key for left
+		#attempt_room_switch("left")
+	#elif event.is_action_pressed("ui_right"):  # "d" key for right
+		#attempt_room_switch("right")
 
 # Helper function to attempt switching rooms in a direction
 func attempt_room_switch(direction: String) -> void:

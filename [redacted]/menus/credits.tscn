@@ -1,0 +1,210 @@
+[gd_scene load_steps=4 format=3 uid="uid://xks0dtshcbtb"]
+
+[ext_resource type="Script" path="res://menus/credits.gd" id="1_4g0ko"]
+[ext_resource type="Theme" uid="uid://vjje68o054kl" path="res://menus/button.tres" id="3_0q123"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcjsb"]
+bg_color = Color(9.32533e-08, 0.0446106, 0.0727817, 1)
+
+[node name="Options" type="Control"]
+process_mode = 3
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4g0ko")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcjsb")
+
+[node name="BackButton" type="Button" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 261.0
+offset_right = 61.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0q123")
+text = "Back"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -239.5
+offset_right = 496.0
+offset_bottom = 239.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Row2" type="HBoxContainer" parent="PanelContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "aoof (rahman)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Role" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "- Inputs and ui"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Row3" type="HBoxContainer" parent="PanelContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "Nicholas"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Role" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "- Game developer"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Row5" type="HBoxContainer" parent="PanelContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "wells"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Role" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "- animations"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Row6" type="HBoxContainer" parent="PanelContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "Sudhansu"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Role" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "- Arts"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Row7" type="HBoxContainer" parent="PanelContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "Denise"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Role" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "- Concept designer"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="PanelContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "Jo"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Role" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "- Sound Designer"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Row4" type="HBoxContainer" parent="PanelContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "Aria"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Role" type="RichTextLabel" parent="PanelContainer/Panel/VBoxContainer/Row4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0q123")
+text = "- Sound Designer"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[connection signal="pressed" from="PanelContainer/Panel/BackButton" to="." method="_on_button_pressed"]

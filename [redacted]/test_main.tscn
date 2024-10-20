@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bohgxk50suya6"]
+
+[ext_resource type="Script" path="res://new_script.gd" id="1_unp48"]
+[ext_resource type="PackedScene" uid="uid://cr86xkuax118s" path="res://player.tscn" id="2_6300q"]
+[ext_resource type="Script" path="res://test_player.gd" id="3_rl5ea"]
+[ext_resource type="PackedScene" uid="uid://b5c50terhkufn" path="res://menus/player_interface.tscn" id="4_o3nyp"]
+
+[sub_resource type="Environment" id="Environment_jlls1"]
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+reflected_light_source = 1
+tonemap_exposure = 0.06
+
+[node name="Game" type="Node3D"]
+process_mode = 3
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+process_mode = 1
+environment = SubResource("Environment_jlls1")
+
+[node name="GameController" type="Node" parent="."]
+process_mode = 1
+script = ExtResource("1_unp48")
+
+[node name="CurrentRoom" type="Node" parent="GameController"]
+
+[node name="Player" parent="." instance=ExtResource("2_6300q")]
+process_mode = 1
+script = ExtResource("3_rl5ea")
+movement_speed = 7.0
+run_speed = 12.0
+
+[node name="PlayerInterface" parent="." instance=ExtResource("4_o3nyp")]
+process_mode = 3
+mouse_filter = 1
