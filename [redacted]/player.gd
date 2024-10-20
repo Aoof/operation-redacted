@@ -15,6 +15,8 @@ var camera_height_offset: float = 6.0  # Raise the camera to center character
 var smooth_time: float = 0.1  # Camera follow smoothing
 var rotation_speed: float = 2.0  # Speed of character rotation
 var rotation_step: float = 1.0  # How much to rotate per frame when turning (adjust for sensitivity)
+var walking_footsteps = preload("res://assets/audio/footsteps.wav")
+var running_footsteps = preload("res://assets/audio/runsteps.wav")
 
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
@@ -53,10 +55,19 @@ func handle_movement(_delta: float) -> void:
 
 	# Apply movement relative to the character's local space
 	velocity = direction * current_speed
+	
+	# Play/stop walking/running sounds
 	if velocity == Vector3.ZERO:
 		if audio_stream_player.playing:
 			audio_stream_player.stop()
 	else:
+		if is_running:
+			if audio_stream_player.stream != running_footsteps:
+				audio_stream_player.stream = running_footsteps
+				
+		elif audio_stream_player.stream != walking_footsteps:
+			audio_stream_player.stream = walking_footsteps
+		
 		if !audio_stream_player.playing:
 			audio_stream_player.play()
 	move_and_slide()

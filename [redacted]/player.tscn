@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr86xkuax118s"]
+[gd_scene load_steps=6 format=3 uid="uid://cr86xkuax118s"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_x2udv"]
 [ext_resource type="Script" path="res://spring_arm.gd" id="2_k6phc"]
