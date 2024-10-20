@@ -1,12 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://cqy22rf2ocrdc"]
+[gd_scene load_steps=18 format=4 uid="uid://c0jtis0na1qb8"]
 
-[ext_resource type="PackedScene" uid="uid://1nw5kt2uvesu" path="res://assets/Wall.fbx" id="1_i3u43"]
-[ext_resource type="PackedScene" uid="uid://c2el65ecx73og" path="res://assets/floor-marble-tiled-floor/source/FloorTiledMarble.fbx" id="2_cfj5x"]
-[ext_resource type="PackedScene" uid="uid://cewam3d7ldgqg" path="res://assets/animated-door/source/DoorAnimate.fbx" id="3_kloc6"]
-[ext_resource type="Texture2D" uid="uid://lwm6d23pnrf3" path="res://assets/animated-door/textures/WoodDoor1.png" id="4_c17o2"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tviqo"]
-size = Vector3(50, 25, 1)
+[ext_resource type="PackedScene" uid="uid://1nw5kt2uvesu" path="res://assets/Wall.fbx" id="1_tsgsl"]
+[ext_resource type="PackedScene" uid="uid://c2el65ecx73og" path="res://assets/floor-marble-tiled-floor/source/FloorTiledMarble.fbx" id="2_qe622"]
+[ext_resource type="PackedScene" uid="uid://cewam3d7ldgqg" path="res://assets/animated-door/source/DoorAnimate.fbx" id="3_dwd5a"]
+[ext_resource type="Texture2D" uid="uid://lwm6d23pnrf3" path="res://assets/animated-door/textures/WoodDoor1.png" id="4_10kkq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iurxi"]
 resource_name = "M_Frame"
@@ -191,7 +188,7 @@ shadow_mesh = SubResource("ArrayMesh_kcacu")
 resource_name = "Material.001"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.991155, 0.990596, 0.995142, 1)
-albedo_texture = ExtResource("4_c17o2")
+albedo_texture = ExtResource("4_10kkq")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sbmqb"]
@@ -252,52 +249,28 @@ _data = {
 
 [node name="room_1" type="Node3D"]
 
-[node name="Wall" parent="." instance=ExtResource("1_i3u43")]
+[node name="Wall" parent="." instance=ExtResource("1_tsgsl")]
 transform = Transform3D(0.000508733, 0, -1.00017, 0, 1, 0, 1.32507, 0, 0.000383994, -4.12922, 0.448558, -3.00789)
 
-[node name="Area3D" type="Area3D" parent="Wall"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/Area3D"]
-transform = Transform3D(0.942606, 0, 0, 0, 0.942607, 0, 5.82077e-11, 0, 0.942606, 0, 0, 0)
-shape = SubResource("BoxShape3D_tviqo")
-
-[node name="Wall2" parent="." instance=ExtResource("1_i3u43")]
+[node name="Wall2" parent="." instance=ExtResource("1_tsgsl")]
 transform = Transform3D(0.000266467, 0, -0.999882, 0, 1, 0, 0.694053, 0, 0.000383884, -4.12922, 0.448558, -17.924)
 
-[node name="Wall3" parent="." instance=ExtResource("1_i3u43")]
+[node name="Wall3" parent="." instance=ExtResource("1_tsgsl")]
 transform = Transform3D(0.000439547, 0, 1.00017, 0, 1, 0, -1.32507, 0, 0.000331771, 26.1745, 0.448558, -6.91077)
 
-[node name="Area3D" type="Area3D" parent="Wall3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/Area3D"]
-transform = Transform3D(0.942606, 0, 0, 0, 0.942607, 0, 5.82077e-11, 0, 0.942606, 0, 0, 0)
-shape = SubResource("BoxShape3D_tviqo")
-
-[node name="Wall4" parent="." instance=ExtResource("1_i3u43")]
+[node name="Wall4" parent="." instance=ExtResource("1_tsgsl")]
 transform = Transform3D(0.000230228, 0, 0.999883, 0, 1, 0, -0.694053, 0, 0.000331677, 26.1638, 0.448558, 8.00533)
 
-[node name="Wall5" parent="." instance=ExtResource("1_i3u43")]
+[node name="Wall5" parent="." instance=ExtResource("1_tsgsl")]
 transform = Transform3D(1.32507, 0, 0.000209367, 0, 1, 0, -0.000277379, 0, 1.00017, 12.9524, 0.448558, 10.4732)
 
-[node name="Area3D" type="Area3D" parent="Wall5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall5/Area3D"]
-transform = Transform3D(0.942606, 0, 0, 0, 0.942607, 0, 5.82077e-11, 0, 0.942606, 0, 0, 0)
-shape = SubResource("BoxShape3D_tviqo")
-
-[node name="Wall6" parent="." instance=ExtResource("1_i3u43")]
+[node name="Wall6" parent="." instance=ExtResource("1_tsgsl")]
 transform = Transform3D(0.694053, 0, 0.000209307, 0, 1, 0, -0.000145287, 0, 0.999883, -1.96366, 0.448558, 10.4706)
 
-[node name="Wall7" parent="." instance=ExtResource("1_i3u43")]
+[node name="Wall7" parent="." instance=ExtResource("1_tsgsl")]
 transform = Transform3D(-1.32507, 0, 0.000506399, 0, 1, 0, -0.000670901, 0, -1.00017, 9.07316, 0.448558, -20.2709)
 
-[node name="Area3D" type="Area3D" parent="Wall7"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall7/Area3D"]
-transform = Transform3D(0.942606, 0, 0, 0, 0.942607, 0, 5.82077e-11, 0, 0.942606, 0, 0, 0)
-shape = SubResource("BoxShape3D_tviqo")
-
-[node name="Wall8" parent="." instance=ExtResource("1_i3u43")]
+[node name="Wall8" parent="." instance=ExtResource("1_tsgsl")]
 transform = Transform3D(-0.694053, 0, 0.000506254, 0, 1, 0, -0.000351408, 0, -0.999882, 23.9893, 0.448558, -20.2577)
 
 [node name="mainlamp" type="MeshInstance3D" parent="."]
@@ -307,7 +280,7 @@ skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="mainlamp"]
 light_color = Color(0.781407, 0.781407, 0.781407, 1)
-light_energy = 14.0
+light_energy = 16.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
 light_size = 1.0
@@ -321,7 +294,7 @@ skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="mainlamp3"]
 light_color = Color(0.853917, 0.853917, 0.853917, 1)
-light_energy = 14.0
+light_energy = 16.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
 light_size = 1.0
@@ -335,7 +308,7 @@ skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="mainlamp2"]
 light_color = Color(0.879776, 0.879776, 0.879776, 1)
-light_energy = 14.0
+light_energy = 16.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
 light_size = 1.0
@@ -349,7 +322,7 @@ skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="mainlamp4"]
 light_color = Color(0.836755, 0.836755, 0.836755, 1)
-light_energy = 14.0
+light_energy = 16.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 14.17
 light_size = 1.0
@@ -362,14 +335,14 @@ mesh = SubResource("ArrayMesh_usu8p")
 skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="side lamp"]
-light_energy = 13.0
+light_energy = 9.404
 light_specular = 5.0
 omni_range = 8.52
 
-[node name="FloorTiledMarble" parent="." instance=ExtResource("2_cfj5x")]
+[node name="FloorTiledMarble" parent="." instance=ExtResource("2_qe622")]
 transform = Transform3D(3.05148, 0, 0, 0, 0.00583206, 0, 0, 0, 3.06127, -4.31368, 0, 10.3609)
 
-[node name="DoorAnimate" parent="." instance=ExtResource("3_kloc6")]
+[node name="DoorAnimate" parent="." instance=ExtResource("3_dwd5a")]
 transform = Transform3D(1, 0, 0, 0, 1.05407, 0, 0, 0, 1.27711, -3.89817, 0, -9.16707)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="DoorAnimate"]
@@ -404,7 +377,7 @@ libraries = {
 "": SubResource("AnimationLibrary_7sg7i")
 }
 
-[node name="DoorAnimate3" parent="." instance=ExtResource("3_kloc6")]
+[node name="DoorAnimate3" parent="." instance=ExtResource("3_dwd5a")]
 transform = Transform3D(1, 0, 0, 0, 1.05407, 0, 0, 0, 1.27711, 26.1862, 0, -0.814719)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="DoorAnimate3"]
@@ -439,7 +412,7 @@ libraries = {
 "": SubResource("AnimationLibrary_7sg7i")
 }
 
-[node name="DoorAnimate2" parent="." instance=ExtResource("3_kloc6")]
+[node name="DoorAnimate2" parent="." instance=ExtResource("3_dwd5a")]
 transform = Transform3D(0.00638786, 0, 1.27708, 0, 1.05407, 0, -0.99998, 0, 0.00815797, 15.2511, 0, -20.2437)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="DoorAnimate2"]
@@ -474,7 +447,7 @@ libraries = {
 "": SubResource("AnimationLibrary_7sg7i")
 }
 
-[node name="DoorAnimate4" parent="." instance=ExtResource("3_kloc6")]
+[node name="DoorAnimate4" parent="." instance=ExtResource("3_dwd5a")]
 transform = Transform3D(0.00638786, 0, 1.27708, 0, 1.05407, 0, -0.99998, 0, 0.00815797, 6.8156, 0, 10.3318)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="DoorAnimate4"]
@@ -508,31 +481,3 @@ skin = SubResource("Skin_hec2r")
 libraries = {
 "": SubResource("AnimationLibrary_7sg7i")
 }
-
-[node name="StaticBody3d1" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.0355448, 0, -0.999368, 0, 1, 0, 0.999368, 0, -0.0355448, -3.99688, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3d1"]
-transform = Transform3D(0.942606, 0, 0, 0, 0.942607, 0, 5.82077e-11, 0, 0.942606, 0, 0, 0)
-shape = SubResource("BoxShape3D_tviqo")
-
-[node name="StaticBody3d2" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.0355448, 0, -0.999368, 0, 1, 0, 0.999368, 0, -0.0355448, 24.9704, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3d2"]
-transform = Transform3D(0.942606, 0, 0, 0, 0.942607, 0, 5.82077e-11, 0, 0.942606, 0, 0, 0)
-shape = SubResource("BoxShape3D_tviqo")
-
-[node name="StaticBody3d3" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.999451, 0, 0.0331203, 0, 1, 0, -0.0331203, 0, -0.999451, 6.83755, 0, -20.2637)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3d3"]
-transform = Transform3D(0.942606, 0, 0, 0, 0.942607, 0, 5.82077e-11, 0, 0.942606, 0, 0, 0)
-shape = SubResource("BoxShape3D_tviqo")
-
-[node name="StaticBody3d4" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.999451, 0, 0.0331203, 0, 1, 0, -0.0331203, 0, -0.999451, 6.83755, 0, 10.3247)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3d4"]
-transform = Transform3D(0.942606, 0, 0, 0, 0.942607, 0, 5.82077e-11, 0, 0.942606, 0, 0, 0)
-shape = SubResource("BoxShape3D_tviqo")

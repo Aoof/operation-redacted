@@ -9,6 +9,8 @@ var objectives = [
 	"Objective: Run!"
 ]
 
+var user_prompt = ""
+
 var pause_menu
 var options_menu
 
