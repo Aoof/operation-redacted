@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var camera = $SpringArm3D/Camera3D
 @onready var character_model = $CharacterModel  # Reference to the CharacterModel node
 @onready var animation_player = $CharacterModel/AnimationPlayer  # Reference the AnimationPlayer inside CharacterModel
+@onready var audio_stream_player = $AudioStreamPlayer
 
 # Optimized variables
 var movement_speed: float = 4.0
@@ -52,6 +53,12 @@ func handle_movement(_delta: float) -> void:
 
 	# Apply movement relative to the character's local space
 	velocity = direction * current_speed
+	if velocity == Vector3.ZERO:
+		if audio_stream_player.playing:
+			audio_stream_player.stop()
+	else:
+		if !audio_stream_player.playing:
+			audio_stream_player.play()
 	move_and_slide()
 
 	# No longer using the rotation in `direction` because we're handling the rotation with A and D keys.
