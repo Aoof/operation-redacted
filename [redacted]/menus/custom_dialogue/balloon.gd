@@ -10,7 +10,7 @@ extends CanvasLayer
 @onready var portrait: TextureRect = %Portrait
 
 ## The dialogue resource
-var resource: DialogueResource = preload("res://assets/dialogues/initial.dialogue")
+var resource: DialogueResource
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -32,6 +32,7 @@ var dialogue_line: DialogueLine:
 
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
+			get_tree().paused = false
 			queue_free()
 			return
 

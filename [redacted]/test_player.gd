@@ -21,12 +21,10 @@ var _snap_vector := Vector3.DOWN
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
 	# Set the spring arm position and camera tilt
+	spring_arm.position = position
 	spring_arm.rotation_degrees.x = camera_angle
 	spring_arm.spring_length = camera_distance
 	spring_arm.position = Vector3(0, camera_height_offset, 0)  # Adjust camera height
-	
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	Globals.mouse_captured = true
 	
 func _physics_process(delta: float) -> void:
 	var move_direction := Vector3.ZERO
@@ -43,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = move_direction.x
 	velocity.z = move_direction.z
-	_velocity.y -= 20 * delta # no collision with floor
+	#velocity.y -= 20 * delta # no collision with floor
 	
 	velocity = velocity * current_speed
 	move_and_slide()
