@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd8fvmg0h2ght"]
+[gd_scene load_steps=5 format=3 uid="uid://bohgxk50suya6"]
 
 [ext_resource type="Script" path="res://new_script.gd" id="1_v15h1"]
 [ext_resource type="PackedScene" uid="uid://cr86xkuax118s" path="res://player.tscn" id="2_qjhht"]
+[ext_resource type="PackedScene" uid="uid://b5c50terhkufn" path="res://menus/player_interface.tscn" id="3_4cvap"]
 
 [sub_resource type="Environment" id="Environment_jlls1"]
 background_energy_multiplier = 0.0
@@ -18,5 +19,11 @@ environment = SubResource("Environment_jlls1")
 script = ExtResource("1_v15h1")
 
 [node name="CurrentRoom" type="Node" parent="GameController"]
+unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("2_qjhht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0893345, 0)
+
+[node name="PlayerInterface" parent="." instance=ExtResource("3_4cvap")]
+process_mode = 3
+mouse_filter = 1

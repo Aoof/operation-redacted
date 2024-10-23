@@ -6,40 +6,40 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
  
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	pass
 
 
-func _on_door_4_collider_body_entered(body: Node3D) -> void:
+func _on_door_4_collider_body_entered(_body: Node3D) -> void:
 	Globals.attempt_room_switch("up")
 
 
-func _on_door_4_collider_body_exited(body: Node3D) -> void:
+func _on_door_4_collider_body_exited(_body: Node3D) -> void:
 	pass # Replace with function body.
 
 
-func _on_door_3_collider_body_entered(body: Node3D) -> void:
+func _on_door_3_collider_body_entered(_body: Node3D) -> void:
 	Globals.attempt_room_switch("down")
 
 
-func _on_door_3_collider_body_exited(body: Node3D) -> void:
+func _on_door_3_collider_body_exited(_body: Node3D) -> void:
 	pass # Replace with function body.
 
 
-func _on_door_2_collider_body_entered(body: Node3D) -> void:
+func _on_door_2_collider_body_entered(_body: Node3D) -> void:
 	Globals.attempt_room_switch("left")
 
 
-func _on_door_2_collider_body_exited(body: Node3D) -> void:
+func _on_door_2_collider_body_exited(_body: Node3D) -> void:
 	pass # Replace with function body.
 
 
-func _on_door_1_collider_body_entered(body: Node3D) -> void:
+func _on_door_1_collider_body_entered(_body: Node3D) -> void:
 	Globals.attempt_room_switch("right")
 
 
-func _on_door_1_collider_body_exited(body: Node3D) -> void:
+func _on_door_1_collider_body_exited(_body: Node3D) -> void:
 	pass # Replace with function body.

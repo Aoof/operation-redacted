@@ -33,7 +33,7 @@ var room_graph = {
 var current_room_name: String = "room1"
 
 # Reference to the node where rooms are instantiated
-@onready var current_room_node = $CurrentRoom
+var current_room_node
 
 enum { MAIN_MENU, OPTIONS, PAUSE, MAIN_GAME, CREDITS }
 enum { EMPTY, RETRIEVE_FILES, ESCAPE }
@@ -63,7 +63,7 @@ func _ready() -> void:
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func get_menu(menu: int) -> String:
@@ -71,7 +71,7 @@ func get_menu(menu: int) -> String:
 		"res://menus/menu.tscn",
 		"res://menus/options.tscn",
 		"res://menus/pause.tscn",
-		"res://test_main.tscn",
+		"res://main.tscn",
 		"res://menus/credits.tscn"
 	]
 	return menus[menu]
@@ -107,10 +107,6 @@ func attempt_room_switch(direction: String) -> String:
 	else:
 		user_prompt = "[color=red]This door is locked[/color]"
 		
-		var timer = Timer.new()
-		timer.timeout = _on_timeout
-		timer.start(3)
-		return current_room_name
-
-func _on_timeout():
-	user_prompt = ""
+		await get_tree().create_timer(3.0).timeout
+		user_prompt = ""
+		return ""

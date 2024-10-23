@@ -188,7 +188,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kcacu")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y7af2"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_nkaef"]
+size = Vector3(0.768066, 4, 0.796143)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkv1p"]
 resource_name = "Material.001"
@@ -376,11 +377,11 @@ omni_range = 8.52
 [node name="FloorTiledMarble" parent="." instance=ExtResource("2_5s5ew")]
 transform = Transform3D(3.05148, 0, 0, 0, 0.00583206, 0, 0, 0, 3.06127, -4.31368, 0, 10.3609)
 
-[node name="Area3D" type="Area3D" parent="FloorTiledMarble"]
-transform = Transform3D(13.3, 0, 0, 0, 13.3, 0, 0, 0, 13.3, 5.4872, -0.000327045, -5.42248)
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorTiledMarble"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTiledMarble/Area3D"]
-shape = SubResource("BoxShape3D_y7af2")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTiledMarble/StaticBody3D"]
+transform = Transform3D(13.3, 0, 0, 0, 13.3, 0, 0, 0, 13.3, 4.99533, -30.1705, -4.95328)
+shape = SubResource("BoxShape3D_nkaef")
 
 [node name="DoorAnimate" parent="." instance=ExtResource("3_j6b35")]
 transform = Transform3D(1, 0, 0, 0, 1.05407, 0, 0, 0, 1.27711, -3.89817, 0, -9.16707)

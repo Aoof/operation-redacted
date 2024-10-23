@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	handle_joystick_input(delta)
 
-func handle_joystick_input(delta: float) -> void:
+func handle_joystick_input(_delta: float) -> void:
 	var joystick_y := Input.get_action_strength("camera_down") - Input.get_action_strength("camera_up")
 	var joystick_x := Input.get_action_strength("camera_right") - Input.get_action_strength("camera_left")
 	
